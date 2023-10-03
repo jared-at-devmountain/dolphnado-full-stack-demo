@@ -23,7 +23,15 @@ queryParamsForm.addEventListener('submit', (event) => {
 
 routeParamsForm.addEventListener('submit', (event) => {
     event.preventDefault()
-    console.log('r')
+
+    let n = routeParamsNameInput.value
+    let a = routeParamsAgeInput.value
+
+    axios.get(`http://localhost:4000/route-param-data/${n}/${a}`)
+    .then((response) => {
+        console.log(response.data)
+        alert('success')
+    })
 })
 
 bodyForm.addEventListener('submit', (event) => {
