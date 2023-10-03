@@ -1,0 +1,21 @@
+form > * {
+    display: block
+}
+
+form {
+    margin: 20px 0px;
+    padding: 40px 10px;
+    border: solid 2px black;
+    background-color: #ffff99;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    margin-top: 10px;
+}
