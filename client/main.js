@@ -36,5 +36,15 @@ routeParamsForm.addEventListener('submit', (event) => {
 
 bodyForm.addEventListener('submit', (event) => {
     event.preventDefault()
-    console.log('b')
+
+    let maBod = {
+        name: bodyNameInput.value,
+        age: bodyAgeInput.value,
+    }
+
+    axios.post('http://localhost:4000/body-data', maBod)
+    .then((response) => {
+        console.log(response.data)
+        alert('success')
+    })
 })

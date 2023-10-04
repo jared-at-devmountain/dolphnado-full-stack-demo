@@ -36,6 +36,20 @@ app.get('/route-param-data/:name/:age', (req, res) => {
     res.status(200).send(database)
 })
 
+app.post('/body-data', (req, res) => {
+    let name = req.body.name
+    let age = req.body.age
+
+    let newObj = {
+        name: name,
+        age: age
+    }
+
+    database.push(newObj)
+
+    res.status(200).send(database)
+})
+
 app.listen(4000, () => {
     console.log('my backend is listening for HTTP requests on port 4000')
 })
