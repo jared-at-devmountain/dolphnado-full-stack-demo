@@ -9,43 +9,25 @@ app.use(express.json())
 let database = []
 
 app.get('/query-param-data', (req, res) => {
-    let name = req.query.name
-    let age = req.query.age
+    let { name, age } = req.query
 
-    let newObj = {
-        name: name,
-        age: age
-    }
-
-    database.push(newObj)
+    database.push({name, age})
 
     res.status(200).send(database)
 })
 
 app.get('/route-param-data/:name/:age', (req, res) => {
-    let name = req.params.name
-    let age = req.params.age
+    let { name, age } = req.params
 
-    let newObj = {
-        name: name,
-        age: age
-    }
-
-    database.push(newObj)
+    database.push({name, age})
 
     res.status(200).send(database)
 })
 
 app.post('/body-data', (req, res) => {
-    let name = req.body.name
-    let age = req.body.age
+    let { name, age } = req.body
 
-    let newObj = {
-        name: name,
-        age: age
-    }
-
-    database.push(newObj)
+    database.push({name, age})
 
     res.status(200).send(database)
 })
